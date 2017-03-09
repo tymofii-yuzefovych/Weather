@@ -16,10 +16,6 @@ module.exports = {
     watch: true,
     module: {
         loaders: [
-          {
-            test: /\.scss$/,
-            loaders: ['style-loader', 'css-loader','sass-loader']
-          },
             {
                 test: /\.jsx$/,
                 exclude: /node_modules/,
@@ -28,7 +24,10 @@ module.exports = {
                     presets: ['es2015', 'stage-2', 'react']
                 }
             },
-
+            {
+              test: /\.css$/,
+               loaders: ['style-loader', 'css-loader']
+            },
         ]
     }
 }
