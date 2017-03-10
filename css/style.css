@@ -5,22 +5,40 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
-header {
-    height: 100px;
-    width: 100%;
-    background: #999;
+a:hover {
+    text-decoration: none;
 }
 
-header span {
+a {
+    text-decoration: none;
+}
+
+header {
+    background: #87cefd;
+    /* Old browsers */
+    background: linear-gradient(to right, #87cefd 0%, #53b4f1 69%, #0589e1 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87cefd', endColorstr='#0589e1', GradientType=1);
+    /* IE6-9 */
+    height: 100px;
+}
+
+#span1 {
+    margin-left: 35px;
+    margin-bottom: 17px;
+}
+
+#span2 {
     line-height: 100px;
     color: white;
-    margin-left: 25px;
     font-size: 24px;
     font-weight: bold;
 }
-table{
-  margin: 0 auto;
+
+table {
+    margin: 0 auto;
 }
+
 table tr td:first-child {
     font-weight: bold;
 }
@@ -28,48 +46,68 @@ table tr td:first-child {
 table tr td {
     padding: 5px;
 }
-.weathermains{
-  text-align: center;
+
+.weathermains {
+    text-align: center;
+    margin-bottom: 100px;
 }
 
+.weathersearch {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.container-floid {}
 
 #forms {
     text-align: center;
-    height: 100px;
-    border-bottom: 1px solid lightgray;
-
-}
-
-#forms button {
-    width: 70px;
-    height: 40px;
-    line-height: 100%;
+    float: right;
+    margin-right: 35px;
 }
 
 form {
-    line-height: 100px;
+    margin-top: 35px;
 }
 
-input {
-    width: 200px;
-    height: 40px;
+form input {
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    border: none;
+    width: 180px;
+    height: 30px;
     margin: 0 auto;
     text-align: center;
 }
 
+form button {
+    width: 70px;
+    height: 30px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    border: none;
+    background: #66ffff;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+/*loader*/
+
 #fountainG {
     position: relative;
-    width: 180px;
-    height: 22px;
+    width: 162px;
+    height: 20px;
     margin: auto;
 }
 
 .fountainG {
     position: absolute;
     top: 0;
-    background-color: rgb(0, 0, 0);
-    width: 22px;
-    height: 22px;
+    background-color: rgb(107, 119, 255);
+    width: 20px;
+    height: 20px;
     animation-name: bounce_fountainG;
     -o-animation-name: bounce_fountainG;
     -ms-animation-name: bounce_fountainG;
@@ -95,11 +133,11 @@ input {
     -ms-transform: scale(.3);
     -webkit-transform: scale(.3);
     -moz-transform: scale(.3);
-    border-radius: 14px;
-    -o-border-radius: 14px;
-    -ms-border-radius: 14px;
-    -webkit-border-radius: 14px;
-    -moz-border-radius: 14px;
+    border-radius: 13px;
+    -o-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
 }
 
 #fountainG_1 {
@@ -112,7 +150,7 @@ input {
 }
 
 #fountainG_2 {
-    left: 22px;
+    left: 20px;
     animation-delay: 0.65s;
     -o-animation-delay: 0.65s;
     -ms-animation-delay: 0.65s;
@@ -121,7 +159,7 @@ input {
 }
 
 #fountainG_3 {
-    left: 45px;
+    left: 40px;
     animation-delay: 0.78s;
     -o-animation-delay: 0.78s;
     -ms-animation-delay: 0.78s;
@@ -130,7 +168,7 @@ input {
 }
 
 #fountainG_4 {
-    left: 67px;
+    left: 61px;
     animation-delay: 0.91s;
     -o-animation-delay: 0.91s;
     -ms-animation-delay: 0.91s;
@@ -139,7 +177,7 @@ input {
 }
 
 #fountainG_5 {
-    left: 90px;
+    left: 81px;
     animation-delay: 1.04s;
     -o-animation-delay: 1.04s;
     -ms-animation-delay: 1.04s;
@@ -148,7 +186,7 @@ input {
 }
 
 #fountainG_6 {
-    left: 112px;
+    left: 101px;
     animation-delay: 1.17s;
     -o-animation-delay: 1.17s;
     -ms-animation-delay: 1.17s;
@@ -157,7 +195,7 @@ input {
 }
 
 #fountainG_7 {
-    left: 135px;
+    left: 121px;
     animation-delay: 1.3s;
     -o-animation-delay: 1.3s;
     -ms-animation-delay: 1.3s;
@@ -166,7 +204,7 @@ input {
 }
 
 #fountainG_8 {
-    left: 157px;
+    left: 142px;
     animation-delay: 1.43s;
     -o-animation-delay: 1.43s;
     -ms-animation-delay: 1.43s;
@@ -177,54 +215,54 @@ input {
 @keyframes bounce_fountainG {
     0% {
         transform: scale(1);
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(28, 119, 255);
     }
     100% {
         transform: scale(.3);
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(111, 236, 252);
     }
 }
 
 @-o-keyframes bounce_fountainG {
     0% {
         -o-transform: scale(1);
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(28, 119, 255);
     }
     100% {
         -o-transform: scale(.3);
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(111, 236, 252);
     }
 }
 
 @-ms-keyframes bounce_fountainG {
     0% {
         -ms-transform: scale(1);
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(28, 119, 255);
     }
     100% {
         -ms-transform: scale(.3);
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(111, 236, 252);
     }
 }
 
 @-webkit-keyframes bounce_fountainG {
     0% {
         -webkit-transform: scale(1);
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(28, 119, 255);
     }
     100% {
         -webkit-transform: scale(.3);
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(111, 236, 252);
     }
 }
 
 @-moz-keyframes bounce_fountainG {
     0% {
         -moz-transform: scale(1);
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(28, 119, 255);
     }
     100% {
         -moz-transform: scale(.3);
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(111, 236, 252);
     }
 }

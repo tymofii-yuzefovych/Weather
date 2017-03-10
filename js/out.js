@@ -12290,7 +12290,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 loading: true,
                 latitudes: 0,
                 longitudes: 0,
-                newObj: {}
+                newObj: {},
+                text: ''
+
             };
             return _this;
         }
@@ -12486,20 +12488,20 @@ document.addEventListener('DOMContentLoaded', function () {
     var Template = function (_React$Component2) {
         _inherits(Template, _React$Component2);
 
-        function Template() {
-            var _ref;
-
-            var _temp, _this3, _ret;
-
+        function Template(props) {
             _classCallCheck(this, Template);
 
-            for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-                args[_key] = arguments[_key];
-            }
+            var _this3 = _possibleConstructorReturn(this, (Template.__proto__ || Object.getPrototypeOf(Template)).call(this, props));
 
-            return _ret = (_temp = (_this3 = _possibleConstructorReturn(this, (_ref = Template.__proto__ || Object.getPrototypeOf(Template)).call.apply(_ref, [this].concat(args))), _this3), _this3.handleTextChange = function (event) {
-                _this3.setState({ text: event.target.value });
-            }, _temp), _possibleConstructorReturn(_this3, _ret);
+            _this3.handleTextChange = function (event) {
+                _this3.setState({
+                    text: event.target.value.replace(/\d/g, '')
+                });
+            };
+
+            _this3.state = {};
+
+            return _this3;
         }
 
         _createClass(Template, [{
@@ -12520,32 +12522,25 @@ document.addEventListener('DOMContentLoaded', function () {
                                 _react2.default.createElement(
                                     'header',
                                     null,
+                                    _react2.default.createElement('img', { id: 'span1', src: './img/2.svg', width: '50px', height: '50px', alt: '' }),
                                     _react2.default.createElement(
                                         'span',
-                                        null,
+                                        { id: 'span2' },
                                         'Weather'
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'div',
-                                { id: 'forms', className: 'col-xs-12 col-sm-12 col-md-12 col-lg-12' },
-                                _react2.default.createElement(
-                                    'form',
-                                    { action: '' },
-                                    _react2.default.createElement(
-                                        'label',
-                                        { htmlFor: '' },
-                                        _react2.default.createElement('input', { type: 'text', placeholder: 'Search your city name', onChange: this.handleTextChange })
                                     ),
                                     _react2.default.createElement(
-                                        'button',
-                                        { type: 'submit', onClick: this.handleButtonClick },
-                                        'Search'
+                                        'div',
+                                        { id: 'forms' },
+                                        _react2.default.createElement(
+                                            'form',
+                                            { action: '' },
+                                            _react2.default.createElement('input', { type: 'text', placeholder: 'Search city name', value: this.state.text, onChange: this.handleTextChange }),
+                                            _react2.default.createElement(
+                                                'button',
+                                                { type: 'submit', onClick: this.handleButtonClick },
+                                                'Search'
+                                            )
+                                        )
                                     )
                                 )
                             )
@@ -12555,7 +12550,17 @@ document.addEventListener('DOMContentLoaded', function () {
                             { className: 'row' },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'col-xs-12 col-sm-6 col-md-6 col-lg-6 weathermains' },
+                                { className: 'col-xs-12 col-sm-12 col-md-12 col-lg-12' },
+                                this.state.text,
+                                this.props.children
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-xs-12 col-sm-12 col-md-12 col-lg-12 weathermains' },
                                 _react2.default.createElement(
                                     'h1',
                                     { style: {
@@ -12569,8 +12574,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     _react2.default.createElement(WeatherMain, null)
                                 )
                             )
-                        ),
-                        this.props.children
+                        )
                     )
                 );
             }
@@ -13147,7 +13151,7 @@ exports = module.exports = __webpack_require__(71)();
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,700);", ""]);
 
 // module
-exports.push([module.i, "* {\n    padding: 0;\n    margin: 0;\n    font-family: 'Josefin Sans', sans-serif;\n}\n\nheader {\n    height: 100px;\n    width: 100%;\n    background: #999;\n}\n\nheader span {\n    line-height: 100px;\n    color: white;\n    margin-left: 25px;\n    font-size: 24px;\n    font-weight: bold;\n}\ntable{\n  margin: 0 auto;\n}\ntable tr td:first-child {\n    font-weight: bold;\n}\n\ntable tr td {\n    padding: 5px;\n}\n.weathermains{\n  text-align: center;\n}\n\n\n#forms {\n    text-align: center;\n    height: 100px;\n    border-bottom: 1px solid lightgray;\n\n}\n\n#forms button {\n    width: 70px;\n    height: 40px;\n    line-height: 100%;\n}\n\nform {\n    line-height: 100px;\n}\n\ninput {\n    width: 200px;\n    height: 40px;\n    margin: 0 auto;\n    text-align: center;\n}\n\n#fountainG {\n    position: relative;\n    width: 180px;\n    height: 22px;\n    margin: auto;\n}\n\n.fountainG {\n    position: absolute;\n    top: 0;\n    background-color: rgb(0, 0, 0);\n    width: 22px;\n    height: 22px;\n    animation-name: bounce_fountainG;\n    -o-animation-name: bounce_fountainG;\n    -ms-animation-name: bounce_fountainG;\n    -webkit-animation-name: bounce_fountainG;\n    -moz-animation-name: bounce_fountainG;\n    animation-duration: 1.3s;\n    -o-animation-duration: 1.3s;\n    -ms-animation-duration: 1.3s;\n    -webkit-animation-duration: 1.3s;\n    -moz-animation-duration: 1.3s;\n    animation-iteration-count: infinite;\n    -o-animation-iteration-count: infinite;\n    -ms-animation-iteration-count: infinite;\n    -webkit-animation-iteration-count: infinite;\n    -moz-animation-iteration-count: infinite;\n    animation-direction: normal;\n    -o-animation-direction: normal;\n    -ms-animation-direction: normal;\n    -webkit-animation-direction: normal;\n    -moz-animation-direction: normal;\n    transform: scale(.3);\n    -o-transform: scale(.3);\n    -ms-transform: scale(.3);\n    -webkit-transform: scale(.3);\n    -moz-transform: scale(.3);\n    border-radius: 14px;\n    -o-border-radius: 14px;\n    -ms-border-radius: 14px;\n    -webkit-border-radius: 14px;\n    -moz-border-radius: 14px;\n}\n\n#fountainG_1 {\n    left: 0;\n    animation-delay: 0.52s;\n    -o-animation-delay: 0.52s;\n    -ms-animation-delay: 0.52s;\n    -webkit-animation-delay: 0.52s;\n    -moz-animation-delay: 0.52s;\n}\n\n#fountainG_2 {\n    left: 22px;\n    animation-delay: 0.65s;\n    -o-animation-delay: 0.65s;\n    -ms-animation-delay: 0.65s;\n    -webkit-animation-delay: 0.65s;\n    -moz-animation-delay: 0.65s;\n}\n\n#fountainG_3 {\n    left: 45px;\n    animation-delay: 0.78s;\n    -o-animation-delay: 0.78s;\n    -ms-animation-delay: 0.78s;\n    -webkit-animation-delay: 0.78s;\n    -moz-animation-delay: 0.78s;\n}\n\n#fountainG_4 {\n    left: 67px;\n    animation-delay: 0.91s;\n    -o-animation-delay: 0.91s;\n    -ms-animation-delay: 0.91s;\n    -webkit-animation-delay: 0.91s;\n    -moz-animation-delay: 0.91s;\n}\n\n#fountainG_5 {\n    left: 90px;\n    animation-delay: 1.04s;\n    -o-animation-delay: 1.04s;\n    -ms-animation-delay: 1.04s;\n    -webkit-animation-delay: 1.04s;\n    -moz-animation-delay: 1.04s;\n}\n\n#fountainG_6 {\n    left: 112px;\n    animation-delay: 1.17s;\n    -o-animation-delay: 1.17s;\n    -ms-animation-delay: 1.17s;\n    -webkit-animation-delay: 1.17s;\n    -moz-animation-delay: 1.17s;\n}\n\n#fountainG_7 {\n    left: 135px;\n    animation-delay: 1.3s;\n    -o-animation-delay: 1.3s;\n    -ms-animation-delay: 1.3s;\n    -webkit-animation-delay: 1.3s;\n    -moz-animation-delay: 1.3s;\n}\n\n#fountainG_8 {\n    left: 157px;\n    animation-delay: 1.43s;\n    -o-animation-delay: 1.43s;\n    -ms-animation-delay: 1.43s;\n    -webkit-animation-delay: 1.43s;\n    -moz-animation-delay: 1.43s;\n}\n\n@keyframes bounce_fountainG {\n    0% {\n        transform: scale(1);\n        background-color: rgb(0, 0, 0);\n    }\n    100% {\n        transform: scale(.3);\n        background-color: rgb(255, 255, 255);\n    }\n}\n\n@-o-keyframes bounce_fountainG {\n    0% {\n        -o-transform: scale(1);\n        background-color: rgb(0, 0, 0);\n    }\n    100% {\n        -o-transform: scale(.3);\n        background-color: rgb(255, 255, 255);\n    }\n}\n\n@-ms-keyframes bounce_fountainG {\n    0% {\n        -ms-transform: scale(1);\n        background-color: rgb(0, 0, 0);\n    }\n    100% {\n        -ms-transform: scale(.3);\n        background-color: rgb(255, 255, 255);\n    }\n}\n\n@-webkit-keyframes bounce_fountainG {\n    0% {\n        -webkit-transform: scale(1);\n        background-color: rgb(0, 0, 0);\n    }\n    100% {\n        -webkit-transform: scale(.3);\n        background-color: rgb(255, 255, 255);\n    }\n}\n\n@-moz-keyframes bounce_fountainG {\n    0% {\n        -moz-transform: scale(1);\n        background-color: rgb(0, 0, 0);\n    }\n    100% {\n        -moz-transform: scale(.3);\n        background-color: rgb(255, 255, 255);\n    }\n}\n", ""]);
+exports.push([module.i, "* {\n    padding: 0;\n    margin: 0;\n    font-family: 'Josefin Sans', sans-serif;\n}\n\nheader {\n    background: #87cefd;\n    /* Old browsers */\n    background: linear-gradient(to right, #87cefd 0%, #53b4f1 69%, #0589e1 100%);\n    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87cefd', endColorstr='#0589e1', GradientType=1);\n    /* IE6-9 */\n    height: 100px;\n}\n\n#span1 {\n    margin-left: 35px;\n    margin-bottom: 17px;\n}\n\n#span2 {\n    line-height: 100px;\n    color: white;\n    font-size: 24px;\n    font-weight: bold;\n}\n\ntable {\n    margin: 0 auto;\n}\n\ntable tr td:first-child {\n    font-weight: bold;\n}\n\ntable tr td {\n    padding: 5px;\n}\n\n.weathermains {\n    text-align: center;\n}\n.container-floid{\n\n}\n\n#forms {\n    text-align: center;\n    float:right;\n    margin-right: 35px;\n}\nform{\n  margin-top: 35px;\n}\n\nform input {\n    width: 180px;\n    height: 30px;\n    margin: 0 auto;\n    text-align: center;\n}\nform button{\n  width: 70px;\n  height: 30px;\n}\n\n\n/*loader*/\n#fountainG{\n\tposition:relative;\n\twidth:162px;\n\theight:20px;\n\tmargin:auto;\n}\n\n.fountainG{\n\tposition:absolute;\n\ttop:0;\n\tbackground-color:rgb(107,119,255);\n\twidth:20px;\n\theight:20px;\n\tanimation-name:bounce_fountainG;\n\t\t-o-animation-name:bounce_fountainG;\n\t\t-ms-animation-name:bounce_fountainG;\n\t\t-webkit-animation-name:bounce_fountainG;\n\t\t-moz-animation-name:bounce_fountainG;\n\tanimation-duration:1.3s;\n\t\t-o-animation-duration:1.3s;\n\t\t-ms-animation-duration:1.3s;\n\t\t-webkit-animation-duration:1.3s;\n\t\t-moz-animation-duration:1.3s;\n\tanimation-iteration-count:infinite;\n\t\t-o-animation-iteration-count:infinite;\n\t\t-ms-animation-iteration-count:infinite;\n\t\t-webkit-animation-iteration-count:infinite;\n\t\t-moz-animation-iteration-count:infinite;\n\tanimation-direction:normal;\n\t\t-o-animation-direction:normal;\n\t\t-ms-animation-direction:normal;\n\t\t-webkit-animation-direction:normal;\n\t\t-moz-animation-direction:normal;\n\ttransform:scale(.3);\n\t\t-o-transform:scale(.3);\n\t\t-ms-transform:scale(.3);\n\t\t-webkit-transform:scale(.3);\n\t\t-moz-transform:scale(.3);\n\tborder-radius:13px;\n\t\t-o-border-radius:13px;\n\t\t-ms-border-radius:13px;\n\t\t-webkit-border-radius:13px;\n\t\t-moz-border-radius:13px;\n}\n\n#fountainG_1{\n\tleft:0;\n\tanimation-delay:0.52s;\n\t\t-o-animation-delay:0.52s;\n\t\t-ms-animation-delay:0.52s;\n\t\t-webkit-animation-delay:0.52s;\n\t\t-moz-animation-delay:0.52s;\n}\n\n#fountainG_2{\n\tleft:20px;\n\tanimation-delay:0.65s;\n\t\t-o-animation-delay:0.65s;\n\t\t-ms-animation-delay:0.65s;\n\t\t-webkit-animation-delay:0.65s;\n\t\t-moz-animation-delay:0.65s;\n}\n\n#fountainG_3{\n\tleft:40px;\n\tanimation-delay:0.78s;\n\t\t-o-animation-delay:0.78s;\n\t\t-ms-animation-delay:0.78s;\n\t\t-webkit-animation-delay:0.78s;\n\t\t-moz-animation-delay:0.78s;\n}\n\n#fountainG_4{\n\tleft:61px;\n\tanimation-delay:0.91s;\n\t\t-o-animation-delay:0.91s;\n\t\t-ms-animation-delay:0.91s;\n\t\t-webkit-animation-delay:0.91s;\n\t\t-moz-animation-delay:0.91s;\n}\n\n#fountainG_5{\n\tleft:81px;\n\tanimation-delay:1.04s;\n\t\t-o-animation-delay:1.04s;\n\t\t-ms-animation-delay:1.04s;\n\t\t-webkit-animation-delay:1.04s;\n\t\t-moz-animation-delay:1.04s;\n}\n\n#fountainG_6{\n\tleft:101px;\n\tanimation-delay:1.17s;\n\t\t-o-animation-delay:1.17s;\n\t\t-ms-animation-delay:1.17s;\n\t\t-webkit-animation-delay:1.17s;\n\t\t-moz-animation-delay:1.17s;\n}\n\n#fountainG_7{\n\tleft:121px;\n\tanimation-delay:1.3s;\n\t\t-o-animation-delay:1.3s;\n\t\t-ms-animation-delay:1.3s;\n\t\t-webkit-animation-delay:1.3s;\n\t\t-moz-animation-delay:1.3s;\n}\n\n#fountainG_8{\n\tleft:142px;\n\tanimation-delay:1.43s;\n\t\t-o-animation-delay:1.43s;\n\t\t-ms-animation-delay:1.43s;\n\t\t-webkit-animation-delay:1.43s;\n\t\t-moz-animation-delay:1.43s;\n}\n\n@keyframes bounce_fountainG{\n\t0%{\n\ttransform:scale(1);\n\t\tbackground-color:rgb(28,119,255);\n\t}\n\n\t100%{\n\ttransform:scale(.3);\n\t\tbackground-color:rgb(111,236,252);\n\t}\n}\n\n@-o-keyframes bounce_fountainG{\n\t0%{\n\t-o-transform:scale(1);\n\t\tbackground-color:rgb(28,119,255);\n\t}\n\n\t100%{\n\t-o-transform:scale(.3);\n\t\tbackground-color:rgb(111,236,252);\n\t}\n}\n\n@-ms-keyframes bounce_fountainG{\n\t0%{\n\t-ms-transform:scale(1);\n\t\tbackground-color:rgb(28,119,255);\n\t}\n\n\t100%{\n\t-ms-transform:scale(.3);\n\t\tbackground-color:rgb(111,236,252);\n\t}\n}\n\n@-webkit-keyframes bounce_fountainG{\n\t0%{\n\t-webkit-transform:scale(1);\n\t\tbackground-color:rgb(28,119,255);\n\t}\n\n\t100%{\n\t-webkit-transform:scale(.3);\n\t\tbackground-color:rgb(111,236,252);\n\t}\n}\n\n@-moz-keyframes bounce_fountainG{\n\t0%{\n\t-moz-transform:scale(1);\n\t\tbackground-color:rgb(28,119,255);\n\t}\n\n\t100%{\n\t-moz-transform:scale(.3);\n\t\tbackground-color:rgb(111,236,252);\n\t}\n}\n", ""]);
 
 // exports
 
