@@ -15,6 +15,7 @@ a {
 
 header {
     background: #87cefd;
+    opacity: .8;
     /* Old browsers */
     background: linear-gradient(to right, #87cefd 0%, #53b4f1 69%, #0589e1 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -22,7 +23,6 @@ header {
     /* IE6-9 */
     height: 100px;
 }
-
 #span1 {
     margin-left: 35px;
     margin-bottom: 17px;
@@ -57,7 +57,9 @@ table tr td {
     text-align: center;
 }
 
-.container-floid {}
+.container-floid {
+
+}
 
 #forms {
     text-align: center;
@@ -85,11 +87,23 @@ form button {
     border-bottom-right-radius: 50px;
     border-top-right-radius: 50px;
     border: none;
-    background: #66ffff;
+    color:white;
+    background: #002BFF;
 }
 
 *:focus {
     outline: none;
+}
+
+@media (max-width:460px) {
+    header{
+        height: 150px;
+    }
+    #forms{
+      position: absolute;
+      top:30%;
+      left:20%;
+    }
 }
 
 
