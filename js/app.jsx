@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     <IndexRoute component={WeatherMain}/>
                 </Route>
                 <Route path='*' component={NotFound}/>
-
             </Router>;
         }
     }

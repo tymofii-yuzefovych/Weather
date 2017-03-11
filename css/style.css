@@ -7,6 +7,7 @@
 
 a:hover {
     text-decoration: none;
+    cursor:pointer;
 }
 
 a {
@@ -28,7 +29,7 @@ header {
     margin-bottom: 17px;
 }
 
-#span2 {
+#span2 a{
     line-height: 100px;
     color: white;
     font-size: 24px;
