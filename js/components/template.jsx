@@ -4,8 +4,9 @@ import cacheProxy from './cacheProxy';
 import {WeatherSearch} from './weatherSearch.jsx';
 import {WeatherMain} from './weatherMain.jsx';
 import {NotFound} from './notFound.jsx';
-import '../../css/style.css';
 import '../../css/bootstrap.min.css';
+import '../../css/style.css';
+
 export class Template extends React.Component {
     constructor(props) {
         super(props);

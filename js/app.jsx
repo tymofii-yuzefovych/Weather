@@ -9,8 +9,8 @@ import {
     hashHistory
 } from 'react-router';
 import cacheProxy from './components/cacheProxy';
-import '../css/style.css';
 import '../css/bootstrap.min.css';
+import '../css/style.css';
 import {WeatherSearch} from './components/weatherSearch.jsx';
 import {WeatherMain} from './components/weatherMain.jsx';
 import {NotFound} from './components/notFound.jsx';
