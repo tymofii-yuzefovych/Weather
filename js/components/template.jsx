@@ -43,7 +43,7 @@ export class Template extends React.Component {
                 <div className={'row'}>
                     <div className={'col-xs-12 col-sm-12 col-md-12 col-lg-12'}>
                         <header>
-                            <a href="#"><img id="span1" src="./img/2.svg" width="50px" height="50px" alt=""/></a>
+                            <a href="#"><img id="span1" src="./img/logo.gif" width="50px" height="50px" alt=""/></a>
 
                             <span id="span2">
                                 <a>Weather</a>

@@ -4205,13 +4205,7 @@ var routes = oneOfType([route, arrayOf(route)]);
 
 class CacheProxy {
     _fetchData(url) {
-        /*
-         * @TODO - Uzupełnij tą metodę tak, aby zwracała Promise,
-         * które spełnia się do rozkodowanego z JSON
-         * obiektu. Wykorzystaj fetch() do pobrania zawartości z argumentu url.
-         */
         return fetch(url).then(resp => resp.json())
-
     }
 
     constructor() {
@@ -12855,9 +12849,9 @@ var _cacheProxy = __webpack_require__(35);
 
 var _cacheProxy2 = _interopRequireDefault(_cacheProxy);
 
-__webpack_require__(117);
-
 __webpack_require__(116);
+
+__webpack_require__(117);
 
 var _weatherSearch = __webpack_require__(75);
 
@@ -13406,9 +13400,9 @@ var _weatherMain = __webpack_require__(74);
 
 var _notFound = __webpack_require__(73);
 
-__webpack_require__(117);
-
 __webpack_require__(116);
+
+__webpack_require__(117);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13474,7 +13468,7 @@ var Template = exports.Template = function (_React$Component) {
                                 _react2.default.createElement(
                                     'a',
                                     { href: '#' },
-                                    _react2.default.createElement('img', { id: 'span1', src: './img/2.svg', width: '50px', height: '50px', alt: '' })
+                                    _react2.default.createElement('img', { id: 'span1', src: './img/logo.gif', width: '50px', height: '50px', alt: '' })
                                 ),
                                 _react2.default.createElement(
                                     'span',
