@@ -1,7 +1,7 @@
 # Weather
 A simple weather site built with React. At the moment you can see local weather conditions and search weather for any city.
 
-Demo: [Weather](https://tymofii-yuzefovych.github.io/).
+Demo: [Weather](https://tymofii-yuzefovych.github.io/Weather).
 
 ## Clone & install
 
